@@ -29,8 +29,22 @@ flyway
 
 ¿Cómo se relacionan el archivo `docker-compose.yml` y el archivo `movies-api/Dockerfile`?
 
--El contenedor instanciado en docker-compose lo hace en base a la imagen declarada en movies-api/Dockerfile. 
+-El contenedor 'movies-api' instanciado en docker-compose lo hace en base a la imagen declarada en movies-api/Dockerfile. 
 
 ¿Qué crees que hace el atributo `context` debajo de `build` (está en la linea 6 del archivo `docker-compose.yml`)?
 
 -Define la ruta donde encontrar el archivo dockerfile
+
+## ETAPA 4
+
+Compara el atributo `build` del servicio `movies-api` con el de `movies-front`. 
+
+¿Cuál es la diferencia? 
+
+La diferencia es que un servicio identifica su archivo Dockerfile mediante `context` y otro mediante `build`
+
+¿Qué pasa si los dejas iguales?
+
+Si se utiliza "build: movies-front" y "build: movies-api", los contenedores se instanciarán correctamente.  
+
+
